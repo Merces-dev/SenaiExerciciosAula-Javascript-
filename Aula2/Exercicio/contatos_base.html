@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+</head>
+<style>
+    body {
+        background-color: rgb(236, 230, 220);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    input {
+        margin: 3px 0;
+        border-radius: 5px;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+
+    }
+
+    table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+
+    }
+
+    th {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 80px;
+        border-radius: 5px;
+
+
+    }
+
+    .dark-mode {
+        background-color: rgb(29, 29, 29);
+        color: white;
+    }
+
+    .dark-mode tr {
+        border-color: white;
+
+    }
+
+    td {
+        display: flex;
+        justify-content: space-evenly;
+
+        padding: 10px 10px 10px 10px;
+        border-radius: 5px;
+
+    }
+
+    tr {
+        width: 600px;
+        display: flex;
+        justify-content: space-evenly;
+        border-width: 2px;
+        border-color: black;
+        border-style: inset;
+        padding: 10px 10px 10px 10px;
+        border-radius: 5px;
+
+    }
+
+    .upper {
+        text-transform: uppercase;
+    }
+
+    button {
+        height: 31px;
+        margin: 6px 2px;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    button:hover {
+        height: 32px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.87);
+        cursor: url(http://www.webcis.com.br/images/lupa-clientes.cur), default;
+
+    }
+</style>
+
+<body id="body" onload='listar()'>
+
+    <button type="button" onclick="darkMode()">Dark Mode</button>
+
+    <div class="input">
+        <div class="column">
+            <input type="text" id="nome" required placeholder="Nome" />
+            <input type="text" id="email" required placeholder="Email" />
+            <input type="text" id="telefone" placeholder="Telefone" required />
+        </div>
+        <div class="column">
+            <button type="button" id='btnCadastrar'>Cadastrar</button>
+            <button type="button" id='btnRemover'>Remover</button>
+        </div>
+    </div>
+    <table>
+        <thead class="upper">
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </thead>
+        <tbody id="tabela-lista-corpo"></tbody>
+    </table>
+</body>
+<script src="contatos_base.js" type="text/javascript"></script>
+
+</html>
