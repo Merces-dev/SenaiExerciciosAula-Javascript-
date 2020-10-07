@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload='Listar()'>
+    <input type="text" required id="fruta">
+    <button type="button" id="btnCadastrar">Cadastrar</button>
+    <button type="button" id="btnRemover">Remover</button>
+    <table>
+        <caption>Frutas</caption>
+        <thead>
+            <th>
+                Nome
+            </th>
+        </thead>
+        <tbody id="tabela-lista-corpo">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    // EXEMPLOS DE ARRAY
+    // let numeros = [5, 10, 15];    -   ARRAY DE INTEIROS
+    // let pessoas = [{id : 1, nome: 'tejota'}, {id: 2, nome : 'giovani'}]    -   ARRAY DE OBJETOS
+
+    let frutas = ['maça', 'morango', 'pessego', 'melancia'];
+    let fruta = document.querySelector('#fruta');
+
+    let btnCadastrar = document.querySelector('#btnCadastrar');
+    btnCadastrar.addEventListener('click',Cadastrar())
+    
+    let btnRemover = document.querySelector('#btnRemover');
+    btnRemover.addEventListener('click',Remover())
+
+    function Listar() {
+
+        let corpoTabela = documento.querySelector('#tabela-lista-corpo');
+        //Limpa o tbody da tabela
+        corpoTabela.innerHTML = '';
+        //Irá armazenar os elementos tr e td
+        let linha, colunaNome;
+
+        // Percorrendo o array (item é a referencia ao meu elemento/objeto no array)
+        frutas.forEach(item => {
+            linha = document.createElement('tr'); // <tr> </tr>
+            colunaNome = document.createElement('td');// <td> </td>
+
+            colunaNome.innerHTML = "<b>"+ item + "<b>"; // <td> item </td>
+            
+            linha.appendChild(colunaNome);// <tr><td> item </td></tr>
+            corpoTabela.appendChild(linha);// <tbody><tr><td> item </td></tr></tbody>
+
+
+        });
+    }
+    function Cadastrar(event){
+
+
+    }
+    function Remover(event){
+        event.preventDefault();
+
+        //pega o nome da fruta
+        //verifica se existe no array
+        //existindo exclui, senão existi envia alerta
+
+    }
+
+
+</script>
+
+</html>
