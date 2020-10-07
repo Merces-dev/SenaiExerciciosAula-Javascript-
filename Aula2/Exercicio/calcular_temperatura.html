@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conversão Temperatura</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <form id="formtemperatura">
+        <input type="text" required name="temperatura" id="temperatura">
+        <input type="checkbox" id="celsius" value="N" name="temperatura">Celsius</checkbox>
+        <input type="checkbox" id="fahrenheit" value="F" name="temperatura">Fahrenheit</checkbox>
+        <button type="submit" id="btnConverter">Converter</button>
+    </form>
+
+    <script>
+
+        let checkboxfahrenheit = document.getElementById("#fahrenheit");
+        let checkboxcelsius = document.getElementById("#celsius");
+        let temperatura = document.querySelector('#temperatura');
+        btnConverter.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log("Temperatura inicial: " + parseInt(temperatura.value));
+
+            checkboxfahrenheit.addEventListener('select', function (event) {
+                event.preventDefault();
+                console.log("Temperatura Celsius: " + parseInt(temperatura.value - 32) / 9 * 5);
+            });
+
+            checkboxcelsius.addEventListener('select', function (event) {
+                event.preventDefault();
+                console.log("Temperatura Fahrenheit: " + parseInt(temperatura.value) * 9 / 5 + 32);
+            });
+
+        })
+
+
+            // if (checkboxfahrenheit.checked == true) {
+            //     valorfinal = temperaturavalue * 9 / 5 + 32;
+            // } else if (checkboxcelsius.checked == true) {
+            //     valorfinal = (temperaturavalue - 32) * 5 / 9;
+            // }
+            // else{
+            //     mensagem.style.display("block");
+            // }
+            // console.log(valorfinal);
+
+
+            // var temperaturavalue = document.getElementById("temperatura").value;
+            // var celsius = document.getElementById("celsius");
+            // var fahrenheit = document.getElementById("fahrenheit");
+            // console.log(temperaturavalue)
+            // if (celsius.checked == true){
+            //     let celsiusValor = (temperaturavalue- 32) * 5 / 9;
+
+            //     return console.log(celsiusValor);
+            // }
+            // else if(fahrenheit.checked == true ){
+            //     let fahrenheitValor = ((temperaturavalue* 9) / 5) + 32;
+            //     console.log(fahrenheitValor)
+            // }
+            // else{
+            //     console.log("Escolha entre fahrenheit e celsius")
+            // }
+
+    </script>
+
+</body>
+
+</html>
