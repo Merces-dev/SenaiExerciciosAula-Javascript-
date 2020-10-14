@@ -80,7 +80,9 @@ let dadosTimes = times.map(time => {
         TotalJogos: time.vitorias + time.derrotas + time.empates,
         Vitorias: time.vitorias,
         Derrotas: time.derrotas,
-        Empates: time.empates
+        Empates: time.empates,
+        SaldoDeGols:time.golsproprio - time.golscontra
+
     }
 });
 console.log(dadosTimes);
