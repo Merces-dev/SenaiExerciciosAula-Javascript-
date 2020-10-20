@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Footer from './components/footer'
 
 function App() {
   return (
@@ -19,10 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <footer>
-        <h1>Testando React lindo</h1>
-        <h2>React brabo nao adianta</h2>
-      </footer>
+      <Footer/>
     </div>
   );
 }
