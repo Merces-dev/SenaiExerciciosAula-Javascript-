@@ -118,13 +118,10 @@ class Categorias extends Component {
                                     <input type="text" className="form-control" id="nome" onChange={this.setNome.bind(this)} aria-describedby="nome" value={this.state.nome} placeholder="Informe o Nome" />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="categoria">Categoria</label>
-                                    <input type="text" className="form-control" id="categoria" onChange={event => this.setState({ categoria: event.target.value })} value={this.state.categoria} placeholder="Informe a Categoria" />
+                                    <label htmlFor="categoria">Descricao</label>
+                                    <input type="text" className="form-control" id="categoria" onChange={event => this.setState({ descricao: event.target.value })} value={this.state.descricao} placeholder="Informe a Descricao" />
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="ano">Ano de Lançamento</label>
-                                    <input type="text" className="form-control small" id="anoLancamento" onChange={event => this.setState({ anoLancamento: event.target.value })} value={this.state.anoLancamento} placeholder="Informe o Ano de Lançamento" />
-                                </div>
+
                                 <button type="button" className="btn btn-secondary" onClick={this.limparCampos.bind(this)}>Cancelar</button>
                                 <button type="submit" className="btn btn-success"  >Salvar</button>
                             </form>
