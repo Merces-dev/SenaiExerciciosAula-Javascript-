@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Filmes from './pages/filmes';
+import Categorias from './pages/categorias';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Filmes />
+    <Categorias/>
   </React.StrictMode>,
   
   
