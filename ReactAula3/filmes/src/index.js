@@ -3,16 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Filmes from './pages/filmes';
 import Categorias from './pages/categorias';
+import NaoEncontrada from './pages/naoencontrada';
+
 
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+const routing = (
+  <Router>
+    <Switch>
+      <Route exact path='/' component ={Filmes}/>
+      <Route path='/categorias' component ={Categorias}/>
+      <Route component ={NaoEncontrada}/>
+
+    </Switch>
+  </Router>
+)
 ReactDOM.render(
-  <React.StrictMode>
-    <Filmes />
-    <Categorias/>
-  </React.StrictMode>,
-  
-  
+  routing,
   document.getElementById('root')
 );
 

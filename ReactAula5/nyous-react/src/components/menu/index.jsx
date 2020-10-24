@@ -8,11 +8,11 @@ const Menu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                 </Nav>
                 <Nav>
                     <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/cadastrar">Cadastrar</Nav.Link>
+                    <Nav.Link href="/cadastro">Cadastrar</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

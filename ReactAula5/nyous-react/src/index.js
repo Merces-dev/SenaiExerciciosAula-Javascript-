@@ -1,19 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from '../src/pages/home';
-import Login from '../src/pages/login';
-
+import Home from './pages/home';
+import Login from './pages/login';
+import Cadastrar from './pages/cadastro';
+import NaoEncontrada from './pages/naoencontrada';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+const routing = (
+  <Router>
+    <Switch>
+      <Route exact path='/' component ={Home}/>
+      <Route path='/login' component ={Login}/>
+      <Route path='/cadastro' component ={Cadastrar}/>
+      <Route component ={NaoEncontrada}/>
 
+    </Switch>
+  </Router>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-    <Login />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 
