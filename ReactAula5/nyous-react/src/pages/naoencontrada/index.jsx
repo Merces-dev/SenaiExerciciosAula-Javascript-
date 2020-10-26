@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from '../../components/menu'
 import Rodape from '../../components/rodape'
-import { Container, Jumbotron } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 const NaoEncontrada = () => {
     return (

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState }  from 'react';
+import { useHistory } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
-import {useHistory} from 'react-router-dom';
-import { Container, Form, Button } from 'react-bootstrap';
-import jwt_decode from "jwt-decode";
+import {Container, Form, Button} from 'react-bootstrap';
 import logo from '../../assets/img/logo.svg';
 import './index.css';
 
@@ -11,6 +11,7 @@ import './index.css';
 
 
 const Login = () => {
+
 
     const history = useHistory();
 
@@ -43,34 +44,35 @@ const Login = () => {
         event.preventDefault();
 
         fetch('http://localhost:5000/api/account/login', {
-        method: 'POST',
-        body: JSON.stringify({
-            email : email,
-            senha : senha
-        }),
-        headers : {
-            'content-type' : 'application/JSON'
-        }
-    })
-    .then(response => {
-        if(response.ok){
-            return response.json();
-        }
-        alert('dados inválidos');
-    })
-    .then(data => {
-        localStorage.setItem('token-nyous-tarde', data.token);
+            method: 'POST',
+            body: JSON.stringify({
+                email: email,
+                senha: senha
+            }),
+            headers: {
+                'content-type': 'application/JSON'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                alert('dados inválidos');
+            })
+            .then(data => {
+                localStorage.setItem('token-nyous-tarde', data.token);
+                console.log('token-nyous-tarde   ' + data.token)
 
-        let usuario = jwt_decode(data.token);
-        console.log(usuario)
-        if (usuario.role === 'admin' ){
-            history.push('/admin/dashboard')
-        }
-        else{
-            history.push('/eventos')
-        }
-    })
-    .catch(err => console.error(err));
+                let usuario = jwt_decode(data.token);
+                console.log(usuario)
+                if (usuario.role === 'admin') {
+                    history.push('/admin/dashboard')
+                }
+                else {
+                    history.push('/eventos')
+                }
+            })
+            .catch(err => console.error(err));
     }
 
     return (
