@@ -12,6 +12,7 @@ btnCalcular.addEventListener("click", function(event){
     //Não deixa a página carregar automaticamente
     event.preventDefault();
     var soma = (parseInt(notaum.value) + parseInt(notadois.value))
+	console.log(soma)
     //Converte notaum e notadois para Int e manipula seus values
     alert("O Valor da soma é " + soma);
     
