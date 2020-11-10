@@ -15,7 +15,7 @@ const listar = () => {
         .catch(err => console.error(err)) // retorna o erro
 }
 
-const preencherTabela = (dados) => {
+const preencherTabela = (dados) => { 
     let corpoTabela = document.querySelector('#tabela-lista-corpo');
     corpoTabela.innerHTML = "";
     let linha, colunaId, colunaNome, colunaCategoria, colunaAnoLancamento, colunaAcao;
@@ -55,7 +55,7 @@ const preencherTabela = (dados) => {
         linha.appendChild(colunaId);
         linha.appendChild(colunaNome);
         linha.appendChild(colunaCategoria);
-        linha.appendChild(colunaAnoLancamento);
+        linha.appendChild(colunaAnoLancamento) ;
         linha.appendChild(colunaAcao);
         corpoTabela.appendChild(linha);
     })
